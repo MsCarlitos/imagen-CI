@@ -20,23 +20,23 @@
 ### Opción 1: Nuevo Proyecto
 
 1. **Ejecuta el archivo `docker-compose.yml`:**
-   - Asegúrate de que tu estructura de directorios tenga la carpeta `application` con las subcarpetas `php` y `mysql`.
+   - Asegúrate de que tu estructura de directorios tenga la carpeta `app` con las subcarpetas `php` y `mysql`.
    - Ejecuta el siguiente comando en la terminal desde la raíz de tu proyecto:
      ```bash
      docker-compose up -d
      ```
-   - Esto instalará las carpetas `php` y `mysql` dentro de la carpeta `application`.
+   - Esto instalará las carpetas `php` y `mysql` dentro de la carpeta `app`.
 
 2. **Preparación del archivo `docker-compose-two.yml`:**
-   - Arrastra el archivo `docker-compose-two.yml` dentro de la carpeta `application`.
+   - Arrastra el archivo `docker-compose-two.yml` dentro de la carpeta `app`.
 
 3. **Renombrar el archivo:**
    - Renombra el archivo `docker-compose-two.yml` a `docker-compose.yml`. Esto reemplazará el archivo anterior de configuración.
 
 4. **Levantar el entorno de desarrollo:**
-   - Abre una terminal y navega a la carpeta `application`:
+   - Abre una terminal y navega a la carpeta `app`:
      ```bash
-     cd application
+     cd app
      ```
    - Ejecuta el siguiente comando para levantar todo el entorno de desarrollo de CodeIgniter 3:
      ```bash
@@ -48,18 +48,18 @@
 Si ya tienes un proyecto de CodeIgniter empezado:
 
 1. **Agrega tu proyecto:**
-   - Coloca tu proyecto de CodeIgniter en una carpeta llamada `php` dentro de la carpeta `application`.
+   - Coloca tu proyecto de CodeIgniter en una carpeta llamada `php` dentro de la carpeta `app`.
 
 2. **Crea una carpeta vacía:**
-   - Crea una carpeta vacía llamada `mysql` dentro de la carpeta `application`.
+   - Crea una carpeta vacía llamada `mysql` dentro de la carpeta `app`.
 
 3. **Agregar y renombrar el archivo:**
-   - Desde la raíz del proyecto, arrastra el archivo `docker-compose-two.yml` a la carpeta `application` y renómbralo a `docker-compose.yml`.
+   - Desde la raíz del proyecto, arrastra el archivo `docker-compose-two.yml` a la carpeta `app` y renómbralo a `docker-compose.yml`.
 
 4. **Levantar el entorno de desarrollo:**
-   - Abre una terminal y navega a la carpeta `application`:
+   - Abre una terminal y navega a la carpeta `app`:
      ```bash
-     cd application
+     cd app
      ```
    - Ejecuta el siguiente comando para levantar todo el entorno de desarrollo de CodeIgniter 3:
      ```bash
@@ -79,23 +79,23 @@ Ahora tu entorno de desarrollo de CodeIgniter 3 debería estar en funcionamiento
 ### Option 1: New Project
 
 1. **Run the `docker-compose.yml` file:**
-   - Ensure your directory structure has the `application` folder with the subfolders `php` and `mysql`.
+   - Ensure your directory structure has the `app` folder with the subfolders `php` and `mysql`.
    - Run the following command in the terminal from the root of your project:
      ```bash
      docker-compose up -d
      ```
-   - This will install the `php` and `mysql` folders inside the `application` folder.
+   - This will install the `php` and `mysql` folders inside the `app` folder.
 
 2. **Prepare the `docker-compose-two.yml` file:**
-   - Drag the `docker-compose-two.yml` file into the `application` folder.
+   - Drag the `docker-compose-two.yml` file into the `app` folder.
 
 3. **Rename the file:**
    - Rename the `docker-compose-two.yml` file to `docker-compose.yml`. This will replace the previous configuration file.
 
 4. **Start the development environment:**
-   - Open a terminal and navigate to the `application` folder:
+   - Open a terminal and navigate to the `app` folder:
      ```bash
-     cd application
+     cd app
      ```
    - Run the following command to start the entire development environment for CodeIgniter 3:
      ```bash
@@ -107,18 +107,18 @@ Ahora tu entorno de desarrollo de CodeIgniter 3 debería estar en funcionamiento
 If you already have a CodeIgniter project started:
 
 1. **Add your project:**
-   - Place your CodeIgniter project in a folder named `php` inside the `application` folder.
+   - Place your CodeIgniter project in a folder named `php` inside the `app` folder.
 
 2. **Create an empty folder:**
-   - Create an empty folder named `mysql` inside the `application` folder.
+   - Create an empty folder named `mysql` inside the `app` folder.
 
 3. **Add and rename the file:**
-   - From the root of the project, drag the `docker-compose-two.yml` file into the `application` folder and rename it to `docker-compose.yml`.
+   - From the root of the project, drag the `docker-compose-two.yml` file into the `app` folder and rename it to `docker-compose.yml`.
 
 4. **Start the development environment:**
-   - Open a terminal and navigate to the `application` folder:
+   - Open a terminal and navigate to the `app` folder:
      ```bash
-     cd application
+     cd app
      ```
    - Run the following command to start the entire development environment for CodeIgniter 3:
      ```bash
