@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    image: alpine
+    volumes:
+      - ./application/php:/app/application/php
+      - ./application/mysql:/app/application/mysql
+    command: sh -c "apk add --no-cache git && \
+                    mkdir -p /app/application/php && \
+                    git clone https://github.com/bcit-ci/CodeIgniter.git /app/application/php && \
+                    echo 'FROM php:7.4-apache' > /app/application/php/Dockerfile && \
+                    echo 'RUN apt-get update && apt-get upgrade -y && apt-get install -y nano' >> /app/application/php/Dockerfile && \
+                    echo 'RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli \\' >> /app/application/php/Dockerfile && \
+                    echo '  && a2enmod headers \\' >> /app/application/php/Dockerfile && \
+                    echo '  && sed -ri -e \"s/^([ \t]*)(<\\/VirtualHost>)/\\1\\tHeader set Access-Control-Allow-Origin \\\"*\\\"\\n\\1\\2/g\" /etc/apache2/sites-available/*.conf' >> /app/app/php/Dockerfile && \
+                    echo 'ENV TERM xterm' >> /app/application/php/Dockerfile && \
+                    echo 'EXPOSE 80' >> /app/application/php/Dockerfile && \
+                    mkdir -p /app/application/mysql && \
+                    echo 'FROM mysql' > /app/application/mysql/Dockerfile && \
+                    echo 'COPY ./db_dump.sql /docker-entrypoint-initdb.d/' >> /app/application/mysql/Dockerfile"
