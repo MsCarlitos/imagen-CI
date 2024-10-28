@@ -17,4 +17,17 @@ services:
                     echo 'EXPOSE 80' >> /app/app/php/Dockerfile && \
                     mkdir -p /app/app/mysql && \
                     echo 'FROM mysql' > /app/app/mysql/Dockerfile && \
-                    echo 'COPY ./db_dump.sql /docker-entrypoint-initdb.d/' >> /app/app/mysql/Dockerfile"
+                    echo 'COPY ./db_dump.sql /docker-entrypoint-initdb.d/' >> /app/app/mysql/Dockerfile && \
+                    echo \"CREATE DATABASE IF NOT EXISTS \\\`${DB_NAME}\\\`;\" > /app/app/mysql/db_dump.sql && \
+                    echo \"USE \\\`${DB_NAME}\\\`;\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"DROP TABLE IF EXISTS \\\`Users\\\`;\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"CREATE TABLE \\\`Users\\\` (\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"  \\\`id\\\` int(11) NOT NULL AUTO_INCREMENT,\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"  \\\`name\\\` varchar(250) NOT NULL,\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"  \\\`email\\\` varchar(250) NOT NULL,\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"  PRIMARY KEY (\\\`id\\\`),\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"  UNIQUE KEY \\\`email_UNIQUE\\\` (\\\`email\\\`)\" >> /app/app/mysql/db_dump.sql && \
+                    echo \") ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"LOCK TABLES \\\`Users\\\` WRITE;\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"INSERT INTO \\\`Users\\\` VALUES (1,'nico','ncr2345@gmail.com');\" >> /app/app/mysql/db_dump.sql && \
+                    echo \"UNLOCK TABLES;\" >> /app/app/mysql/db_dump.sql"
